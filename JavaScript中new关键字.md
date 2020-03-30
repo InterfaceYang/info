@@ -1,0 +1,39 @@
+# 			JavaScript中new关键字解析
+
+> **`new` 运算符**创建一个用户定义的对象类型的实例或具有构造函数的内置对象的实例。**`new`** 关键字会进行如下的操作：
+>
+> 1. 创建一个空的简单JavaScript对象（即`{}`）；
+>
+> 2. 链接该对象（即设置该对象的构造函数）到另一个对象 ；
+>
+> 3. 将步骤1新创建的对象作为`this`的上下文 ；
+>
+> 4. 如果该函数没有返回对象，则返回`this`
+>
+>    [引入自MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new)
+
+
+
+##### 代码演示
+
+```javascript
+function Person(name) {
+	this.name = name;
+	sayhello= function() {
+		console.log('this name is ', name)
+	}
+}
+const person = new Person('tom')
+//这里初始化Person的过程中，new关键字主要做了三步
+function _new (Fn, ...args) {
+    let p = {} // let p = Object.create({})                   // 初始化一个新对象
+    p.__proto__ = Fn.prototype;   //链接这个空对象到需要初始化的构造函数的原型链上
+	let result=  Person.apply(p,args) //链接这个空对象到需要初始化的构造函数的原型链上
+    return typeof result === 'object'  ? result :p  // 通过call方法，将方法都绑定到上边的p对象中
+}
+
+const _newPerson = _new(Person,'Tom')
+```
+
+
+
