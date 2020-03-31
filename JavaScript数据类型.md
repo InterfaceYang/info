@@ -72,6 +72,16 @@ typeof []   // object
 instanceof的原理主要是看是不是在原型链上，instanceof主要是为了判断是否属于某一类型，这本来无可厚非，但是他还可以判断是否是某类型的子类，这就造成，如果存在继承关系，
 在使用instanceof进行判断的时候，就会产生困扰，可能会造成非预期的效果。
 
+比如自己构造的类，在使用new关键字进行实例化的时候，会返回true，而直接使用类进行初始化的时候，instanceof 会返回false
+
+```js
+function Person () {console.log(1)}
+let p1 = new Person()          p1  instanceof Person   true
+let p2 = Person()              p2  instanceof Person   false
+```
+
+
+
 ###### 1，针对简单数据类型：
 
 因为instanceof的判断原理，所以在处理诸如Number，String，和Boolean的时候会有一些需要注意的点。
@@ -96,7 +106,7 @@ let sy = Symbol()
 sy instanceof Symbol  // false
 ```
 
-​		通过示例代码可以看出，instanceof因为需要检查原型链上的构造函数，因此，检测简单类型比较鸡肋，除非是通过构造函数进行的包装类型，因此简单类型不适合使用instanceof。
+​		通过示例代码可以看出，instanceof因为需要检查原型链上的构造函数，因此，检测简单类型比较鸡肋，除非是通过构造函数进行的包装类型。
 
 ​		因为众所周知的原因，js一切对象都来源于null，是不是 sy instanceof null 也会返回true呢？
 这里不会，这里会提示 Right-hand side of 'instanceof' is not an object
