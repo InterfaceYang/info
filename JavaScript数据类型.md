@@ -96,7 +96,9 @@ let sy = Symbol()
 sy instanceof Symbol  // false
 ```
 
-因为众所周知的原因，js一切对象都来源于null，是不是 sy instanceof null 也会返回true呢？
+​		通过示例代码可以看出，instanceof因为需要检查原型链上的构造函数，因此，检测简单类型比较鸡肋，除非是通过构造函数进行的包装类型，因此简单类型不适合使用instanceof。
+
+​		因为众所周知的原因，js一切对象都来源于null，是不是 sy instanceof null 也会返回true呢？
 这里不会，这里会提示 Right-hand side of 'instanceof' is not an object
 
 ###### 2，针对引用数据类型：
