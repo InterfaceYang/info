@@ -2,7 +2,9 @@
 
 ​		
 
-https://juejin.im/post/5e7f8314e51d4546fa4511c9
+[从206个console.log()完全弄懂数据类型转换的前世今生(]: https://juejin.im/post/5e7f8314e51d4546fa4511c9
+
+
 
 ​		由于JavaScript的弱类型特点，导致他的数据类型是由他的值决定的，所以在使用过程中，JavaScript会存在一些让人迷惑的类型转换过程。
 
