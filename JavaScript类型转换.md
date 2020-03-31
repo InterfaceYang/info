@@ -1,5 +1,9 @@
 # 				JavaScript类型转换
 
+​		
+
+https://juejin.im/post/5e7f8314e51d4546fa4511c9
+
 ​		由于JavaScript的弱类型特点，导致他的数据类型是由他的值决定的，所以在使用过程中，JavaScript会存在一些让人迷惑的类型转换过程。
 
 ​		说到类型转换，两个常用的函数是toString()和valueOf()。见文知意，对于前者toString()，主要是获得表示该对象的字符串，对于后者valueOf()，主要是获得该对象的原始数据，数据类型转换是指在有+运算的时候，
