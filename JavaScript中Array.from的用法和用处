@@ -1,6 +1,4 @@
-# 					常用数组方法
-
-​		ES6给数组新增了很多方法，其中好多方法是之前需要引用lodash之类的库才有的，给编码带来了不少效率的提升。
+# 					JavaScript中Array.from的用法和用处
 
 ##### Array.from方法
 
@@ -10,11 +8,13 @@
 >
 > 
 
-​		Array.from方法和[...]拓展运算符都可以将一些类似数组的元素转化成数组。
+###### 方法的使用场景和限制	
 
-两者都可以将部署了遍历器接口（Symbol.iterator）的对象转换成数组，而对于Arrar.from方法，还可以将类似数组的对象转化成数组。`类似对象`本质特征只有一点，即必须有length属性。
+​	Array.from方法和[...]拓展运算符都可以将一些类似数组的元素转化成数组。
 
-　	要将一个类数组对象转换为一个真正的数组，必须具备以下条件：
+​	两者都可以将部署了遍历器接口（Symbol.iterator）的对象转换成数组，而对于Arrar.from方法，还可以将类似数组的对象转化成数组。`类似对象`本质特征只有一点，即必须有length属性。
+
+要将一个类数组对象转换为一个真正的数组，必须具备以下条件：
 
 1,具有length属性，哪怕是‘length’也可以，这将是转化完数组的长度
 
@@ -47,13 +47,17 @@ let arr2 = Array.from(arrayLike); // ['a', 'b', 'c']
 let arr2 = Array.from(arrayLike1); // [undefined, undefined, undefined]
 ```
 
-​		如果要对Array.from做兼容，可以在支持Array.from的时候使用Arrar.from，而不支持的情况下使用[].call.slice()代替。
+###### 如何对方法进行兼容		
+
+如果要对Array.from做兼容，可以在支持Array.from的时候使用Arrar.from，而不支持的情况下使用[].call.slice()代替。
 
 ```js
 const toArray = ((arr)=>{
 	 return Array.from ? Array.from(arr): arr=>[].slice.call(arr)
 })
 ```
+
+###### 方法可以接第二个函数参数
 
 Array.from还可以接受第二个参数，类似于map的方法
 
@@ -69,9 +73,10 @@ Array.from(arrayLike,(ar)=>ar+'   hello')
 
 
 
-Array.from妙用1
+###### Array.from妙用
 
-可以结合Set实现数组的快速去重
+- 可以结合Set实现数组的快速去重
+
 
 ```js
 let arr = [1,2,3,3,55,4,4]
@@ -80,8 +85,9 @@ const uniqueArr = (arr)=>{
 }
 ```
 
+- 可以构造出待length，可迭代的对象，做一些处理
+
 ```js
 const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step));
 
 ```
-
