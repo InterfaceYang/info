@@ -58,6 +58,12 @@ s-maxage 设置代理缓存
 
 
 
+前人写的浏览器缓存方面的芝士
+
+https://juejin.im/post/5e89fe22f265da47b924d032?utm_source=gold_browser_extension
+
+
+
 
 
 

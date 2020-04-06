@@ -8,6 +8,10 @@
 
 
 
+[详解promise](https://juejin.im/post/5e888002e51d4546bd34f6cc?utm_source=gold_browser_extension)
+
+
+
 ```js
 const getData = () => new Promise(resolve => setTimeout(() => resolve("data"), 1000))
 

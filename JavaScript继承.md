@@ -68,3 +68,11 @@ var student = new Student('Tom')
 student.introduce()
 student.eat()
 ```
+
+
+
+
+
+前人写的集成方面的好文
+
+https://juejin.im/post/5e8aa20651882573a343d089?utm_source=gold_browser_extension
