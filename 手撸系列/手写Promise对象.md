@@ -12,6 +12,12 @@
 
 
 
+[手写一个Promise/A+,完美通过官方872个测试用例](https://juejin.im/post/5e8bec156fb9a03c4d40f4bc)
+
+
+
+
+
 ```js
 const getData = () => new Promise(resolve => setTimeout(() => resolve("data"), 1000))
 

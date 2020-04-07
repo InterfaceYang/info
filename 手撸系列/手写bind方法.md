@@ -4,7 +4,7 @@
 
 > Nature and nature's laws, hidden in the dark. God said, let Newton go! So, all becomes bright.	
 >
-> bind可以说是js中最newton的存在。
+> ​																									bind可以说是js中最newton的存在。
 
 [Function.prototype.bind()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
 

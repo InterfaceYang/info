@@ -2,6 +2,26 @@
 
 ##### 介绍作用
 
+由于JavaScript中，this指向是在运行时确定的，指向执行者，这就导致有时候一些情况会产生不可控的情况，因此call和apppy应运而生，主要用来指定函数运行的时候的this指向。
+
+
+
+```js
+function sayHello() {
+    name:''
+    console.log('name is ', this.name)
+}
+const obj = {
+    name: 'tom'
+}
+// 
+obj.say = sayHello   
+obj.say()
+
+```
+
+
+
 ##### 一些常规操作
 
 ##### 一些可以利用的特性
