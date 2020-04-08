@@ -1,4 +1,4 @@
-# 			JavaScript作用域
+# 			JavaScript的执行上下文和作用域
 
 ##### 概念
 
@@ -33,12 +33,13 @@ function first() {
     console.log('i am first')
     // 3,又遇到了函数，继续生成属于自己的执行上下文，继续压入当前执行栈
     sencod()
-    // 4，sencod函数执行完毕，推出执行栈
+    // 4，sencod函数执行完毕，推出执行栈，这个执行上下文被删除，所有本地变量也无效。
     
 }
 //5，first函数执行完毕，推出执行栈
 
 function sencod() {
+  	let str = "hello"
     console.log('i am sencod')
 }
 console.log('i am outside')
@@ -66,4 +67,14 @@ function sencod() {
 
 
 ##### JavaScript创建执行栈过程
+
+​		执行上下文有两个阶段：创建阶段和执行阶段
+
+###### 创建阶段：
+
+1. this值的决定，即this绑定
+2. 创建**词法环境**
+3. 创建**变量环境**
+
+
 
