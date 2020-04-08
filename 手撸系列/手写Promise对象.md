@@ -1,22 +1,10 @@
 # 							Promise
 
-
-
-
-
 [手写async await的最简实现（20行搞定）面试必考！](https://juejin.im/post/5e79e841f265da5726612b6e)
-
-
 
 [详解promise](https://juejin.im/post/5e888002e51d4546bd34f6cc?utm_source=gold_browser_extension)
 
-
-
 [手写一个Promise/A+,完美通过官方872个测试用例](https://juejin.im/post/5e8bec156fb9a03c4d40f4bc)
-
-
-
-
 
 ```js
 const getData = () => new Promise(resolve => setTimeout(() => resolve("data"), 1000))
