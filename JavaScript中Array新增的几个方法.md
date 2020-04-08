@@ -1,8 +1,17 @@
-##### keys  values entries 三个遍历函数
+##### 1.keys  values entries 三个遍历函数
 
-##### some every 
+##### 2.some every 
 
-##### map和reduce
+##### 3.flat
+
+神奇，es6竟然有数组扁平化的处理函数
+
+```js
+const arr = [1, [2, [3]]]
+ar.flat(Infinity) //参数的意思是要拉平多少层
+```
+
+##### 4.map和reduce
 
 ###### 用reduc写一个递归实现数组的扁平化处理
 

@@ -13,17 +13,29 @@
 ​		手写一个bind方法，实现可以主动修改this的指向问题，可以利用跟bind有差不多效果的apply/call方法。
 
 ```js
-    function myBind(fun,...args) {
-        let that = this ;
-        let _fun ;
-
-        _fun = that.apply(fun,args)
-
+    // myBind简单实现，这里有三个问题，
+	// 如果bind绑定后的函数被new了，那么此时this指向就发生改变。此时的this就是当前函数的实例
+	// 有保留原函数在原型链上的属性和方法
+	// bind之后的方法可以继续添加参数，这里没有考虑
+	function myBind(fun,...args) {
+        let _fun =  this.apply(fun,args)
         return _fun
     }
 ```
 
 ​	
 
-
+```js
+function myBind(fun,...args) {
+    let that = this;
+    let _fn  = function () {
+	// bind之后的方法可以继续添加参数，这里没有考虑
+    that.apply(this instanceof that ? this : args, args.concat(Array.prototype.slice.call(arguments)))
+    }
+	// 有保留原函数在原型链上的属性和方法
+    _fn.prototype = Object.create(that)
+    
+    return _fn
+}
+```
 
