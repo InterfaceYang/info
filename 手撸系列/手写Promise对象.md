@@ -8,6 +8,8 @@
 
 [详解promise](https://juejin.im/post/5e888002e51d4546bd34f6cc?utm_source=gold_browser_extension)
 
+[异步编程二三事 | Promise/async/Generator实现原理解析 | 9k字](https://juejin.im/post/5e3b9ae26fb9a07ca714a5cc)
+
 [手写一个Promise/A+,完美通过官方872个测试用例](https://juejin.im/post/5e8bec156fb9a03c4d40f4bc)
 
 ```js
