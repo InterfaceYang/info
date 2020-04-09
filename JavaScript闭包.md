@@ -84,3 +84,32 @@
 11: console.log('example of function returning a function: ', sum)
 ```
 
+##### 闭包正菜
+
+```js
+ // 1，函数开始执行，遇到函数，老规矩，全局上下文搞个变量  createCounter存函2-8行的函数
+ 1: function createCounter() {
+   
+ // 3，函数内部执行，首先声明counter赋值0，
+ 2:   let counter = 0
+ 
+ // 4，声明myFuntion，赋值后边函数的返回值
+ 3:   const myFunction = function() {
+   
+ // 5，赋值操作，让counter+1，0+1 = 1
+ 4:     counter = counter + 1
+   
+ // 6，遇到return，则函数执行完毕，推出执行栈，内部变量销毁,但是myFunction由于被下边返回因此
+ 5:     return counter
+ 6:   }
+ // 7，遇到return 
+ 7:   return myFunction
+ 8: }
+   // 2，遇到声明变量，遇到函数声明，遇到函数后有（），老规矩，increment在全局作用域下被赋值为createCounter函数的返回值
+ 9: const increment = createCounter()
+10: const c1 = increment()
+11: const c2 = increment()
+12: const c3 = increment()
+13: console.log('example increment', c1, c2, c3)
+```
+
