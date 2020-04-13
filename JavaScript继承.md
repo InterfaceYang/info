@@ -23,16 +23,18 @@ Fn.prototype === fn.__proto__    //true
 
 ```javascript
 // 这是个祖元素
-var Person = function(name) {
-    this.name = name ;
-    this.introduce = function(name) {
-        console.log('my name is ', name)
-        return name
+var Person = function(name ="defaultName", gifts = ['eat','reading'] ) {
+    this.name = name;
+    this.gifts = gifts;
+    this.introduce = function() {
+        console.log('my name is ',name)
+        console.log('my gifts is ',gifts)
+        //return name
     }
 }
 // 添加原型链方法
-Person.prototype.eat = function(food) {
-    console.log('i am eatting' , food)
+Person.prototype.eat = function() {
+    console.log('i am eatting')
 }
 ```
 
@@ -40,21 +42,44 @@ Person.prototype.eat = function(food) {
 
 ```js
 // 初始化子元素
-function Student(name) {
-    this.name = name
+function Student(grade) {
+    this.grade = grade
 }
 //讲Student的原型链指向需要继承父类的实例上，就可以实现集成
 Student.prototype = new Person()
 //实例化子元素
-var student = new Student('Tom')
 
-student.introduce('jerry')
-student.eat('nodejs')
+var student = new Student('grade1')
+
+student.introduce()
+student.eat()
 ```
 
 缺点：
 
+1. 共享父类的属性，如果一个子类修改，其他也会修改，这不符合预期
+2. 无法向父类方法传参，即没有办法给name赋值。
+
 ###### 二、使用构造方式的函数
+
+​		使用构造函数的方法实现继承，主要是在子类内部执行父类的构造方法，并且将在子类中利用call方法改变this指向，实现继承。
+
+```js
+function Student(name,gifts) {
+    Person.call(this, name,gifts)
+}
+
+let st1 = new Student('tom', ['catching mouse'])
+let st2 = new Student('jerry', ['dring milk'])
+
+st1.introduce()
+//st1.eat()
+st2.introduce()
+//st2.eat()
+
+```
+
+缺点：可以看到，这种方法无法实现原型链上的方法的继承。eat方法执行时会报错
 
 
 
@@ -62,14 +87,33 @@ student.eat('nodejs')
 
 ```js
 function Student(name) {
-    Person.call(this,name)
+    Person.call(this,...arguments)
 }
-var student = new Student('Tom')
-student.introduce()
-student.eat()
+Student.prototype = Person.prototype
 ```
 
+组合使用原型链继承和构造函数继承方法，
 
+将Studen之类的prototype指向Person的prototype，
+
+在子类内部通过call将改变this的执行
+
+缺点：通过Student构造函数new出来的实例，student.__proto.constructor.name == Person，显然这不符合预期
+
+###### 四，寄生组合继承
+
+既然通过组合方式实现js继承无法维护之类的构造函数，那么，在组合完之后，将`_proto_.constructo`r修改一下不就得了，于是有了终极方案：
+
+```js
+function Student(name) {
+    Person.call(this,...arguments)
+}
+Student.prototype = Object.create(Person.prototype)
+// 然后_proto.constructor指向Student就可以了。
+Son.prototype.constructor = Son;
+```
+
+###### 五，ES6的extend方法
 
 
 

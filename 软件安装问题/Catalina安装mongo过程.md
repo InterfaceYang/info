@@ -5,5 +5,8 @@
    mongod --dbpath ~/data/db // 挪过去
    ```
 
-   ​		<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdrrigui4ej31180hqta6.jpg" style="zoom:80%;" />
+   ​		<img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdrrigui4ej31180hqta6.jpg" style="zoom: 50%;" />
+   
+
+2.
 
