@@ -7,12 +7,12 @@ JavaScript作为单线程语言的代表，在处理复杂事件时，采用的�
 setInterval可以保证固定时间间隔将要执行的事件推到事件的执行队列，但是如果这个事件执行需要很长时间，而在推入时间执行队列时候，还没有完成，这就容易造成事件的堆积。程序连续运行好几次，而之间没有间隔
 
 ```js
-function say(){
+function say(dealy){
   //something
    console.log('helloworld',new Date().toString())
-  setTimeout(say,200);
+  setTimeout(say,dealy);
 }
-setTimeout(say,200)
+setTimeout(say,dealy)
 
 
 setTimeout(function(){
