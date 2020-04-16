@@ -40,6 +40,8 @@ Person.prototype.eat = function() {
 
 ###### 一、继承，使用原型链继承
 
+​		将父类的实例作为子类的原型
+
 ```js
 // 初始化子元素
 function Student(grade) {
