@@ -1,6 +1,18 @@
-##### 1.keys  values entries 三个遍历函数
+##### 1. entries 
 
-##### 2.some every 
+[entries](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/entries)
+
+var arr = [1,2,3]
+
+var inter = arr.entries()
+
+inter.next().value     // ===> [0,'a']
+
+ inter是一个新的迭代器对象，既然是对象，那么他的__proto__上有一个next()方法，可用于便利迭代器取得原数组
+
+##### 2.some 
+
+##### every 
 
 ##### 3.flat
 
