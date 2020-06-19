@@ -19,3 +19,14 @@
 
 ```
 
+3.安装依赖提示:root:code for hash md5 was not found.
+
+解决方案：
+
+```
+1.ls /usr/local/Cellar/openssl       // 1.0.2t
+2.
+
+```
+
+.
