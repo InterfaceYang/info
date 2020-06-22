@@ -1,4 +1,6 @@
-### 主要写一些wepy学习过程中需要注意的地方
+#### 							wepy学习过程中需要注意的地方
+
+> 自说自话，如果
 
 1. ##### wepy事件执行顺序
 
@@ -12,7 +14,9 @@
 
    <img src="/Users/yang/Library/Application Support/typora-user-images/image-20200619144123226.png" alt="image-20200619144123226" style="zoom:33%;" />
 
-4. ##### wepy中一些数据更改后，为了确保脏数据对比，需要显式的调用$apply()方法进行应用
+4. 手动调用`$apply`方法
+
+   ​		wepy中一些数据更改后，正常流程下，改变数据后，组件会在流程结束时自动触发脏检查。 在异步或者回调流程中改变数据时，需要手动调用`$apply`方法。需要显式的调用$apply()方法进行应用
 
 5. ##### 混入模式mixin的时候，可以通过this.$mixin[].methods.method()循环调用，但是只是会继续调两次机会停止
 
