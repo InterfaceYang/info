@@ -29,5 +29,7 @@
 
 7. `intercept(api:String, provider:Object)`：使用拦截器对原生API请求进行拦截（待研究）
 
+8. 
+
 
 
