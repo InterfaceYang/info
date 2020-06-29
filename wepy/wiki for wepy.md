@@ -35,7 +35,7 @@
 
    <img src="/Users/yang/Library/Application Support/typora-user-images/image-20200629211152661.png" alt="image-20200629211152661" style="zoom:40%;" />
 
-9. wepy组件传值跟vue完全不同，可以说完全不能跟vue相比，特别是object的传参，经常有问题，这里有问题一定要
+9. wepy组件传值跟vue完全不同，可以说完全不能跟vue相比，特别是object的传参，经常有问题，这里有问题一定要注意。
 
    
 
