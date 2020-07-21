@@ -1,9 +1,17 @@
+
+
 ##### vscode保存的时候自动纠正eslint问题
 
 ```js
 "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
  }
+```
+
+##### 自动Prettier同理
+
+```js
+  "editor.formatOnSave": true
 ```
 
 ##### vscode打开wepy文件wpy的时候，标红问题
